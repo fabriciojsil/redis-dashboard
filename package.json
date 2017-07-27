@@ -1,0 +1,23 @@
+{
+  "name": "redis-dashboard",
+  "version": "0.0.0",
+  "description": "this is a simple dashboard to monitor redis",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabriciojsil/redis-dashboard.git"
+  },
+  "author": "Fabrício Jean Silva <fabriciojsil@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fabriciojsil/redis-dashboard/issues"
+  },
+  "homepage": "https://github.com/fabriciojsil/redis-dashboard#readme",
+  "dependencies": {
+    "chai": "^4.1.0",
+    "mocha": "^3.4.2"
+  }
+}
