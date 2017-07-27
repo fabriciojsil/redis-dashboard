@@ -4,7 +4,7 @@
   "description": "this is a simple dashboard to monitor redis",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/mocha/mocha"
+    "test": "node_modules/mocha/bin/mocha"
   },
   "repository": {
     "type": "git",
