@@ -1,7 +1,7 @@
 {
   "env": {
     "node": true,
-    "es6": true 
+    "es6": true
   },
   "rules": {
     "brace-style": [2, "1tbs", { "allowSingleLine": true }],
@@ -25,6 +25,8 @@
     "Prism": true,
     "Spinner": true,
     "Timer": true,
-    "moment": true
-  }
+    "moment": true,
+    "describe": true,
+    "it": true
+    }
 }
