@@ -17,8 +17,11 @@
   },
   "homepage": "https://github.com/fabriciojsil/redis-dashboard#readme",
   "dependencies": {
+    "express": "^4.15.3"
+  },
+  "devDependencies": {
     "chai": "^4.1.0",
-    "express": "^4.15.3",
+    "istanbul": "^0.4.5",
     "mocha": "^3.4.2"
   }
 }
