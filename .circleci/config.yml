@@ -3,6 +3,8 @@ jobs:
   build:
     docker:
       - image: circleci/node:8.1.4
+        envireoment:
+          CODECLIMATE_REPO_TOKEN: 48fcf2494dbef5d8ddb5b8b047f2baa7bcad1ab4519962a7ca9c7a4ed113dacf
     working_directory: ~/repo
     steps:
       - checkout
