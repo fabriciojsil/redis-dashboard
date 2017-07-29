@@ -1,45 +1,21 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/repo
     docker:
       - image: circleci/node:8.1.4
-        environment:
-           CC_TEST_REPORTER_ID: 48fcf2494dbef5d8ddb5b8b047f2baa7bcad1ab4519962a7ca9c7a4ed113dacf
+        envireoment:
+          CODECLIMATE_REPO_TOKEN: 48fcf2494dbef5d8ddb5b8b047f2baa7bcad1ab4519962a7ca9c7a4ed113dacf
+    working_directory: ~/repo
     steps:
       - checkout
       - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-      - run:
-          name: install-npm
-          command: npm install
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          - v1-dependencies-
+      - run: npm install
+
       - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - node_modules
-  test:
-    docker:
-      - image: circleci/node:8.1.4
-    steps:
-      - checkout
-      - run:
-          name: test
-          command: npm test
-      - store_artifacts:
-          path: coverage/coverage.json
-          prefix: tests
-      - store_artifacts:
-          path: coverage
-          prefix: coverage
-workflows:
-  version: 2
-  build_and_test:
-    jobs:
-      - build
-      - test:
-          requires:
-            - build
-dependencies:
-  post:
-    - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-    - chmod +x ./cc-test-reporter
+          key: v1-dependencies-{{ checksum "package.json" }}
+      - run: npm test
