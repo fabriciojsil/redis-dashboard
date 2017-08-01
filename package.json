@@ -4,7 +4,8 @@
   "description": "this is a simple dashboard to monitor redis",
   "main": "src/index.js",
   "scripts": {
-    "test": "node_modules/istanbul/lib/cli.js  cover node_modules/mocha/bin/_mocha -- -R spec"
+    "test": "node_modules/istanbul/lib/cli.js  cover node_modules/mocha/bin/_mocha -- -R spec",
+    "start-dev": "nodemon src/index"
   },
   "repository": {
     "type": "git",
